@@ -1,0 +1,11 @@
+#game-grid {
+  display: grid;
+  grid-template: repeat(16, auto) / repeat(16, auto);
+}
+
+.gameSquare {
+  background-color: grey;
+  box-sizing: border-box;
+  border: 2px solid;
+  border-color: purple;
+}

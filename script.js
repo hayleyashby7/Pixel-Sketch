@@ -2,6 +2,7 @@
 const MAX_DIMENSION = 600;
 
 createBoard(16);
+addEventListeners();
 
 function setMaxHeightWidth(element) {
   element.style.maxHeight = `${MAX_DIMENSION}px`;
@@ -31,3 +32,12 @@ function createBoard(squaresPerSide) {
     }
   }
 }
+
+function addEventListeners() {
+  let squares = document.querySelectorAll(".gameSquare");
+  squares.forEach((square) =>
+    square.addEventListener("mouseover", colourSquare)
+  );
+}
+
+function colourSquare(event) {}

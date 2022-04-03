@@ -4,8 +4,8 @@
 }
 
 .gameSquare {
-  background-color: grey;
+  background-color: white;
   box-sizing: border-box;
-  border: 2px solid;
-  border-color: purple;
+  border: 1px solid;
+  border-color: gray;
 }

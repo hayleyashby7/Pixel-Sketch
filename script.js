@@ -2,34 +2,33 @@
 const MAX_DIMENSION = 600;
 let boardSize = 16;
 
-createBoard(boardSize);
-addEventListeners();
+createBoard();
 
 function setMaxHeightWidth(element) {
   element.style.maxHeight = `${MAX_DIMENSION}px`;
   element.style.maxWidth = `${MAX_DIMENSION}px`;
 }
 
-function setSquareSide(square, numPerSide) {
-  let sideLength = MAX_DIMENSION / numPerSide;
+function setSquareSide(square) {
+  let sideLength = MAX_DIMENSION / boardSize;
 
   square.style.height = `${sideLength}px`;
   square.style.width = `${sideLength}px`;
 }
 
-function createBoard(squaresPerSide) {
-  let gameGrid = document.getElementById("game-grid");
-
+function createBoard() {
+  let gameGrid = setGameGridSize();
   setMaxHeightWidth(gameGrid);
 
   // Add board divs by rows of columns
-  for (let row = 1; row <= squaresPerSide; row++) {
-    for (let col = 1; col <= squaresPerSide; col++) {
+  for (let row = 1; row <= boardSize; row++) {
+    for (let col = 1; col <= boardSize; col++) {
       let newSquare = createSquare(row, col);
-      setSquareSide(newSquare, squaresPerSide);
+      setSquareSide(newSquare, boardSize);
       gameGrid.append(newSquare);
     }
   }
+  addEventListeners();
 }
 
 function createSquare(row, col) {
@@ -60,11 +59,19 @@ function resetBoard(event) {
     alert(`${newBoardSize} is not between 1-100`);
   } else {
     boardSize = newBoardSize;
-    updateBoard();
+    removeOldSquares();
+    createBoard();
   }
 }
 
-function updateBoard() {
-  let gridStyle = document.getElementById("game-grid");
-  gridStyle.style.gridTemplate = `repeat(${newBoardSize}, auto) / repeat(${newBoardSize}, auto)`;
+function setGameGridSize() {
+  let gameGrid = document.getElementById("game-grid");
+  gameGrid.style.gridTemplate = `repeat(${boardSize}, 1fr) / repeat(${boardSize}, 1fr)`;
+
+  return gameGrid;
+}
+
+function removeOldSquares() {
+  let squares = document.querySelectorAll(".gameSquare");
+  squares.forEach((square) => square.remove());
 }

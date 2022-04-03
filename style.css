@@ -1,6 +1,5 @@
 #game-grid {
   display: grid;
-  grid-template: repeat(16, auto) / repeat(16, auto);
 }
 
 .gameSquare {

@@ -1,53 +1,85 @@
-#game-grid {
-  display: grid;
+body {
+  background-color: #f8edeb;
 }
 
-.gameSquare {
+#container {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  padding: 20px;
+}
+
+#grid {
+  display: grid;
+  border: solid 2px;
+  border-color: #d8e2dc;
+  margin: 20px;
+  background-color: white;
+}
+
+#menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.subtext {
+  text-align: center;
+  font-size: 18px;
+  color: #6f1a0b;
+}
+
+.option {
+  margin: 20px;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: #fec5bb;
+}
+
+.gridSquare {
   box-sizing: border-box;
-  border: 1px solid;
-  border-color: gray;
+  background-color: black;
 }
 
 .zero_percent {
-  background-color: rgba(0 0 0 / 0%);
+  opacity: 0%;
 }
 
 .ten_percent {
-  background-color: rgba(0 0 0 / 10%);
+  opacity: 10%;
 }
 
 .twenty_percent {
-  background-color: rgba(0 0 0 / 20%);
+  opacity: 20%;
 }
 
 .thirty_percent {
-  background-color: rgba(0 0 0 / 30%);
+  opacity: 30%;
 }
 
 .fourty_percent {
-  background-color: rgba(0 0 0 / 40%);
+  opacity: 40%;
 }
 
 .fifty_percent {
-  background-color: rgba(0 0 0 / 50%);
+  opacity: 50%;
 }
 
 .sixty_percent {
-  background-color: rgba(0 0 0 / 60%);
+  opacity: 60%;
 }
 
 .seventy_percent {
-  background-color: rgba(0 0 0 / 70%);
+  opacity: 70%;
 }
 
 .eighty_percent {
-  background-color: rgba(0 0 0 / 80%);
+  opacity: 80%;
 }
 
 .ninety_percent {
-  background-color: rgba(0 0 0 / 90%);
+  opacity: 90%;
 }
 
 .hundred_percent {
-  background-color: rgba(0 0 0 / 100%);
+  opacity: 100%;
 }

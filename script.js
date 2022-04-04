@@ -33,7 +33,7 @@ function createBoard() {
 
 function createSquare(row, col) {
   let newSquare = document.createElement("div");
-  newSquare.classList.add("gameSquare");
+  newSquare.classList.add("gridSquare");
   newSquare.classList.add("zero_percent");
   return newSquare;
 }
@@ -42,7 +42,10 @@ function addEventListeners() {
   let resetButton = document.getElementById("reset");
   resetButton.addEventListener("click", resetBoard);
 
-  let squares = document.querySelectorAll(".gameSquare");
+  let colourButton = document.getElementById("colourChange");
+  colourButton.addEventListener("click", changeColour);
+
+  let squares = document.querySelectorAll(".gridSquare");
   squares.forEach((square) =>
     square.addEventListener("mouseover", colourSquare)
   );
@@ -113,6 +116,10 @@ function colourSquare(event) {
   }
 }
 
+function changeColour(event) {
+  console.log(event);
+}
+
 function resetBoard(event) {
   let newBoardSize = prompt("Enter number of squares per side(between 1-100)");
 
@@ -126,13 +133,13 @@ function resetBoard(event) {
 }
 
 function setGameGridSize() {
-  let gameGrid = document.getElementById("game-grid");
+  let gameGrid = document.getElementById("grid");
   gameGrid.style.gridTemplate = `repeat(${boardSize}, 1fr) / repeat(${boardSize}, 1fr)`;
 
   return gameGrid;
 }
 
 function removeOldSquares() {
-  let squares = document.querySelectorAll(".gameSquare");
+  let squares = document.querySelectorAll(".gridSquare");
   squares.forEach((square) => square.remove());
 }

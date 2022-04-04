@@ -3,12 +3,25 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width , initial-scale=1.0" />
-    <title>Etch-a-Sketch clone</title>
+    <title>Sketchin' Style</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <button id="reset">Reset grid</button>
-    <div id="game-grid"></div>
+    <div class="subtext">
+      <h1>Sketchin' Style</h1>
+    </div>
+    <div id="container">
+      <div id="menu">
+        <button id="reset" class="option">Reset grid</button>
+        <input type="color" id="colourChange" class="option">
+        </input>
+      </div>
+      <div id="grid"></div>
+    </div>
+
     <script src="script.js" defer></script>
+    <footer>
+      <div class="subtext">&copy Hayley Ashby 2022</div>
+    </footer>
   </body>
 </html>

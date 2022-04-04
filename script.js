@@ -34,6 +34,7 @@ function createBoard() {
 function createSquare(row, col) {
   let newSquare = document.createElement("div");
   newSquare.classList.add("gameSquare");
+  newSquare.classList.add("zero_percent");
   return newSquare;
 }
 
@@ -49,7 +50,67 @@ function addEventListeners() {
 
 function colourSquare(event) {
   let square = event.target;
-  square.style.backgroundColor = "black";
+
+  switch (true) {
+    case square.classList.contains("hundred_percent"): {
+      //Maximum
+      break;
+    }
+
+    case square.classList.contains("ninety_percent"): {
+      square.classList.toggle("hundred_percent");
+      break;
+    }
+
+    case square.classList.contains("eighty_percent"): {
+      square.classList.toggle("ninety_percent");
+      break;
+    }
+
+    case square.classList.contains("seventy_percent"): {
+      square.classList.toggle("eighty_percent");
+      break;
+    }
+
+    case square.classList.contains("sixty_percent"): {
+      square.classList.toggle("seventy_percent");
+      break;
+    }
+
+    case square.classList.contains("fifty_percent"): {
+      square.classList.toggle("sixty_percent");
+      break;
+    }
+
+    case square.classList.contains("fourty_percent"): {
+      square.classList.toggle("fifty_percent");
+      break;
+    }
+
+    case square.classList.contains("thirty_percent"): {
+      square.classList.toggle("fourty_percent");
+      break;
+    }
+
+    case square.classList.contains("twenty_percent"): {
+      square.classList.toggle("thirty_percent");
+      break;
+    }
+
+    case square.classList.contains("ten_percent"): {
+      square.classList.toggle("twenty_percent");
+      break;
+    }
+
+    case square.classList.contains("zero_percent"): {
+      square.classList.toggle("ten_percent");
+      break;
+    }
+
+    default: {
+      // Do nothing - leave as is
+    }
+  }
 }
 
 function resetBoard(event) {

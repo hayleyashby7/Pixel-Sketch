@@ -1,4 +1,8 @@
 html {
+  min-height: 100%;
+}
+
+body {
   background: linear-gradient(#80ffdb, #5e60ce);
   font-family: "VT323", monospace;
   height: 100%;

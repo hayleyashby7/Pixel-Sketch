@@ -1,6 +1,7 @@
 "use strict";
-const MAX_DIMENSION = 600;
+const MAX_DIMENSION = 500;
 let boardSize = 16;
+let currentColour = "#000000";
 
 createBoard();
 
@@ -39,11 +40,14 @@ function createSquare(row, col) {
 }
 
 function addEventListeners() {
-  let resetButton = document.getElementById("reset");
-  resetButton.addEventListener("click", resetBoard);
+  let resizeButton = document.getElementById("resize");
+  resizeButton.addEventListener("click", resizeBoard);
 
   let colourButton = document.getElementById("colourChange");
-  colourButton.addEventListener("click", changeColour);
+  colourButton.addEventListener("change", changeColour);
+
+  let resetButton = document.getElementById("reset");
+  resetButton.addEventListener("click", clearBoard);
 
   let squares = document.querySelectorAll(".gridSquare");
   squares.forEach((square) =>
@@ -53,6 +57,8 @@ function addEventListeners() {
 
 function colourSquare(event) {
   let square = event.target;
+
+  square.style.backgroundColor = currentColour;
 
   switch (true) {
     case square.classList.contains("hundred_percent"): {
@@ -117,18 +123,24 @@ function colourSquare(event) {
 }
 
 function changeColour(event) {
-  console.log(event);
+  currentColour = event.target.value;
 }
 
-function resetBoard(event) {
-  let newBoardSize = prompt("Enter number of squares per side(between 1-100)");
+function clearBoard() {
+  removeOldSquares();
+  createBoard();
+}
 
-  if (newBoardSize > 100 || newBoardSize < 1) {
-    alert(`${newBoardSize} is not between 1-100`);
-  } else {
-    boardSize = newBoardSize;
-    removeOldSquares();
-    createBoard();
+function resizeBoard(event) {
+  let newBoardSize = prompt("Please enter pixel density between 1-100.");
+
+  if (newBoardSize !== "" && newBoardSize !== null) {
+    if (newBoardSize > 100 || newBoardSize < 1) {
+      alert(`${newBoardSize} is not between 1-100`);
+    } else {
+      boardSize = newBoardSize;
+      clearBoard();
+    }
   }
 }
 

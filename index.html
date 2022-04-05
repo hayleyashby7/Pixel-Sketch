@@ -3,25 +3,31 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width , initial-scale=1.0" />
-    <title>Sketchin' Style</title>
+    <title>Pixel-Sketch</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="subtext">
-      <h1>Sketchin' Style</h1>
+      <h1 class="text">Pixel-Sketch</h1>
     </div>
     <div id="container">
       <div id="menu">
-        <button id="reset" class="option">Reset grid</button>
-        <input type="color" id="colourChange" class="option">
-        </input>
+        <input type="color" id="colourChange" class="option" />
+        <button id="reset" class="option text">Reset</button>
+        <button id="resize" class="option text">Resize</button>
       </div>
       <div id="grid"></div>
     </div>
 
     <script src="script.js" defer></script>
     <footer>
-      <div class="subtext">&copy Hayley Ashby 2022</div>
+      <div class="subtext text">&copy Hayley Ashby 2022</div>
     </footer>
   </body>
 </html>

@@ -1,11 +1,13 @@
-html {
+body {
+  background: linear-gradient(to bottom, #80ffdb, #5e60ce);
+  font-family: "VT323", monospace;
   min-height: 100%;
+  height: auto;
 }
 
-body {
-  background: linear-gradient(#80ffdb, #5e60ce);
-  font-family: "VT323", monospace;
-  height: 100%;
+html {
+  height: auto;
+  min-height: 100%;
 }
 
 #container {

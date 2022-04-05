@@ -1,1 +1,1 @@
-Etch-a-Sketch clone
+Pixel art application with a cyberpunk style.
